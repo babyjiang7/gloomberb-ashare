@@ -11,6 +11,7 @@ Release: **0.9.0-alpha.1**. Checks were performed on **2026-10-05, Asia/Shanghai
 | TypeScript tests | 103 passed, 0 failed, 836 assertions across 9 files |
 | TypeScript typecheck | Passed with the repository's standalone tsconfig |
 | Python tests | 46 passed in the new virtual environment |
+| Official GitHub installation and removal | Passed with installed Gloomberb 0.15.8 in a fresh anonymous profile; Python setup/check, doctor 10/10, real service exit, and official removal |
 | Source-only release audit | No runtime/profile/database/authentication files, personal paths, binary packages, or credentials in the allowlisted source tree |
 
 Tests cover issuer identity, ambiguous search, cancellation, finite retries, exact-key membership, custom-name ownership, fresh-position merging, legacy name migration, display-mode races, local service ownership, setup checks, and rejection of retired service routes.
@@ -20,6 +21,8 @@ Four executable fault-injection tests use POSIX shebang fixtures and are skipped
 ## Actual installed-host checks
 
 The installed **Gloomberb 0.15.8** executable loaded this Alpha in a new anonymous disposable profile. No personal authentication or portfolio was copied into it.
+
+After the repository was published, the official `install babyjiang7/gloomberb-ashare` command was also tested from another fresh profile. It fetched the published source, prepared a new Python environment, passed all ten doctor checks, and started the real local service. The service exited successfully when its input pipe closed. Official removal succeeded, and both installation-test profiles were deleted. All 49 tracked files matched the fetched commit throughout that check. Only this validation document was updated afterward; runtime source stayed unchanged.
 
 - `plugin doctor` passed, including the desktop browser bundle and declared hosts.
 - Real CNINFO-backed searches for Chinese name, full pinyin, initials, and stock code returned the expected issuer candidate. Exact issuer verification was also exercised.
