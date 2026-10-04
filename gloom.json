@@ -1,0 +1,6 @@
+{
+  "id": "ashare-local",
+  "name": "A-share Support",
+  "version": "0.9.0-alpha.1",
+  "minGloom": "0.15.8"
+}

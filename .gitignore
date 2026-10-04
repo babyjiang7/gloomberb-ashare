@@ -1,0 +1,12 @@
+.venv/
+.tools/
+node_modules/
+runtime/
+data/
+.local-audit/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+.env
+.env.*
