@@ -17,6 +17,28 @@ Chinese issuer names come from CNINFO. English names come from a matching native
 
 The release contains no independent research pane, quote provider, financial-statement provider, announcement/PDF service, or sample-company whitelist.
 
+## Screenshots
+
+Cropped from the actual Gloomberb 0.15.8 macOS app on **2026-10-05**, using a disposable demo profile with synthetic holdings.
+
+### Search by initials
+
+![Global gyfl search with native research, Watchlist, and Portfolio actions](docs/images/search-initials.jpg)
+
+Enter `gyfl` in global search to find 工业富联. Choose native research, Add to Watchlist, or Add to Portfolio.
+
+### Names in native lists
+
+![Native Watchlist and Main Portfolio tables with Chinese and English company names](docs/images/native-lists.jpg)
+
+The original Watchlist and Main Portfolio show Chinese + English in NAME and keep stock codes in TICKER. These demo tables show only those two columns. Full names fit this wide desktop layout; narrower layouts can clip them, and the terminal's default NAME width is 16 display cells.
+
+### Name display settings
+
+![Official plugin Setup with Chinese and English name display choices](docs/images/name-settings.jpg)
+
+In `PL → A-share Support → Setup`, choose Chinese + English, Chinese, or English. Missing English falls back to verified Chinese.
+
 ## Requirements
 
 - Gloomberb **0.15.8 or newer**. The actual installed-host baseline tested for this release is 0.15.8.
@@ -65,7 +87,7 @@ Stock codes stay in the original TICKER field. This plugin does not make the inp
 
 ## Known limits
 
-- Native NAME is a single line. Long English names are clipped. The terminal's default NAME width is 16 display cells. The public plugin API does not provide a two-line name or a native NAME width override.
+- Native NAME is a single line and can clip long English names in narrow layouts. The terminal's default NAME width is 16 display cells. The public plugin API does not provide a two-line name or a native NAME width override.
 - Portfolio Grid labels remain stock codes. The name mode changes the shared native table name field and can therefore affect other views that use it.
 - Live frontend name publication and automatic NAME-column selection depend on the native status bar being visible. Existing saved names remain when it is hidden.
 - Startup, new members, and mode changes trigger finite work. Failed requests get one bounded retry. There is no continuous full-market polling.

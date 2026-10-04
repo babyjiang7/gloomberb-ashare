@@ -15,6 +15,28 @@
 
 中文名称来自 CNINFO 当前发行人核对。英文来自同证券的原生 Cloud／Yahoo 报价或准确代码搜索。插件核对代码、交易所、CNY 和普通股类型，不翻译名称。
 
+## 界面截图
+
+以下图片裁剪自 **2026-10-05** 的实际 Gloomberb 0.15.8 macOS 应用。使用临时演示配置，持仓为虚构示例。
+
+### 用首字母搜索
+
+![全局 gyfl 搜索显示原生研究、加入自选和加入组合三个动作](docs/images/search-initials.jpg)
+
+在全局搜索中输入 `gyfl`，找到工业富联，再选择原生研究、加入自选或加入组合。
+
+### 原生列表中的名称
+
+![原生 Watchlist 和 Main Portfolio 表格显示中英文公司名](docs/images/native-lists.jpg)
+
+原生 Watchlist 和 Main Portfolio 在 NAME 列显示“中文 · English”，TICKER 列保留证券代码。演示表格只显示这两列。图中的宽桌面布局可显示完整名称；窄布局仍会截断，终端 NAME 默认宽度为 16 个显示单元。
+
+### 名称显示设置
+
+![官方插件 Setup 中的中英文、中文和英文名称选项](docs/images/name-settings.jpg)
+
+在 `PL → A-share Support → Setup` 中选择中英文、仅中文或仅英文。缺少英文时显示已核对的中文。
+
 ## 安装
 
 需要 Gloomberb 0.15.8 或以上、Python 3.10 或以上，以及 Python 的 `venv` 和 `pip`。实际宿主验收基线为 0.15.8。
@@ -48,7 +70,7 @@
 
 ## 已知限制
 
-- 原生 NAME 是单行。长名称会截断，终端默认宽度为 16 个显示单元。
+- 原生 NAME 是单行。窄布局会截断长名称，终端默认宽度为 16 个显示单元。
 - Portfolio Grid 标签仍显示代码。共享名称字段也可能影响使用该字段的其他原生视图。
 - 即时界面名称同步依赖可见的原生状态栏。
 - Watchlist／Portfolio 面板内的输入框仍使用原生解析器，不直接支持中文／拼音。
